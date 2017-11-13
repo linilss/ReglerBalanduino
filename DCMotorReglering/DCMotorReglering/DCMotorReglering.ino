@@ -8,11 +8,12 @@
 static Kalman kalman;
 
 // Set Kp and Ki here: 
-double Kp = 0.0;
-double Ki = 0.0; 
+double Kp = 1;
+double Ki = 4.0; 
 
 double P = 0.0;
 double I = 0.0;
+double P_I = 0.0;
 
 double reference; // Reference value (In Swedish: Börvärde)
 
@@ -41,7 +42,7 @@ void setup()
   // First argument is the low value of the pulse
   // Second argument is the hight value of the pulse
   // Third argument is the pulse width in microseconds
-  setup_setpoint_generator_pulse(6.0, 12.0, 4000000);  
+  setup_setpoint_generator_pulse(6.0, 9.0, 4000000);  
 }
 
 void loop()
@@ -66,8 +67,8 @@ void loop()
   //
   // Part 4: Read actual output (In Swedish: Ärvärde)
   //
-  double actual_output = getRotSpeed(h);   // Get the speed of the motor in rad/s
-  //double actual_output = getPosition();   // Get the position of the motor in rad
+  //double actual_output = getRotSpeed(h);   // Get the speed of the motor in rad/s
+  double actual_output = getPosition();   // Get the position of the motor in rad
 
   // 
   // Part 5: Generate the control error, i.e. difference
@@ -80,8 +81,10 @@ void loop()
   //
   P = Kp * e;
   double u = P; // Calculate control output  
-  double saturated_u = constrain(u, -12.0, 12.0); // Make sure the calculated output is -12 <= u <= 12 (Min voltage -12V, max voltage +12V)
-  //I = .... // Change for PI-controller.
+  double saturated_u = constrain(u, -12, 12); // Make sure the calculated output is -12 <= u <= 12 (Min voltage -12V, max voltage +12V)
+  I = I + Ki * h * e; // Change for PI-controller.
+  P_I = P + I;
+
   
   // 
   // Part 7: Actuate the control output by sending
