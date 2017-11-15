@@ -17,7 +17,10 @@ plot(time, error)
 legend('error')
 title('Control error')
 
+
+
 subplot(3,1,3)
 plot(time, calculated_control, time, actual_control)
 legend('calculated control', 'actual control')
 title('Calculated and actual control signals')
+
