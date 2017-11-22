@@ -28,10 +28,10 @@ s = tf('s');
 
 % Ni skall satta in era framraknade varden i tillstandsmodellen
 
-tmp21 = (((-Balanduino.m*Balanduino.d)*(pi)^2 + (Balanduino.g*(Balanduino.M+Balanduino.m))/(Balanduino.d*Balanduino.M))); 
+tmp21 = (((Balanduino.g*(Balanduino.M+Balanduino.m))/(Balanduino.d*Balanduino.M))); 
 tmp24 = ((Balanduino.Km)/(Balanduino.r*Balanduino.d*Balanduino.M));
-tmp31 = (Balanduino.g*Balanduino.m - Balanduino.m*Balanduino.d*pi)/Balanduino.M;
-tmp34 = Balanduino.Km/Balanduino.r;
+tmp31 = (Balanduino.g*Balanduino.m)/Balanduino.M;
+tmp34 = Balanduino.Km/(Balanduino.r * Balanduino.M);
 tmp43 = -Balanduino.Ku/(Balanduino.r*Balanduino.La);
 tmp44 = -Balanduino.Ra/Balanduino.La;
 % A-matrisen
