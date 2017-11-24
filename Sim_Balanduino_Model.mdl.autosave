@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.42"
+    ComputedModelVersion    "1.43"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -54,7 +54,7 @@ Model {
 	DockPosition		"Left"
 	Width			[50]
 	Height			[50]
-	Filter			[8]
+	Filter			[9]
       }
       Object {
 	$PropName		"ExplorerBarInfo"
@@ -105,9 +105,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "User"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Nov 22 15:00:16 2017"
-  RTWModifiedTimeStamp	  433264273
-  ModelVersionFormat	  "1.%<AutoIncrement:42>"
+  LastModifiedDate	  "Wed Nov 22 16:48:20 2017"
+  RTWModifiedTimeStamp	  433430175
+  ModelVersionFormat	  "1.%<AutoIncrement:43>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -2909,8 +2909,8 @@ Model {
       "98039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863]"
       ",'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{["
       "]}},'ShowContent',true,'Placement',1)),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false),e"
-      "xtmgr.Configuration('Tools','Measurements',true,'Version','2017b')),'Version','2017b','Location',[829.8 504.6 11"
-      "53.8 743.8],'VisibleAtModelOpen','on')"
+      "xtmgr.Configuration('Tools','Measurements',true,'Version','2017b')),'Version','2017b','Location',[799.4 360.6 11"
+      "23.4 599.8],'VisibleAtModelOpen','on')"
       NumInputPorts	      "1"
     }
     Block {
@@ -2938,7 +2938,7 @@ Model {
       "745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames'"
       ",{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1)),extmgr.Configuration('Tools','Plot Navi"
       "gation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2017b')),'Version',"
-      "'2017b','Location',[380.2 471 704.2 710.2],'VisibleAtModelOpen','on')"
+      "'2017b','Location',[397 371.8 721 611],'VisibleAtModelOpen','on')"
       NumInputPorts	      "1"
     }
     Block {
@@ -2986,7 +2986,7 @@ Model {
       BlockType		      TransferFcn
       Name		      "The computed transfer function G"
       SID		      "598"
-      Position		      [555, 360, 635, 410]
+      Position		      [570, 360, 650, 410]
       ZOrder		      -9
       BackgroundColor	      "green"
       Numerator		      "G.num{1}"

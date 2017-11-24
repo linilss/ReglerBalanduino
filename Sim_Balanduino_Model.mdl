@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.42"
+    ComputedModelVersion    "1.43"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -105,9 +105,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "User"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Nov 22 15:00:16 2017"
-  RTWModifiedTimeStamp	  433263613
-  ModelVersionFormat	  "1.%<AutoIncrement:42>"
+  LastModifiedDate	  "Wed Nov 22 16:48:20 2017"
+  RTWModifiedTimeStamp	  433264273
+  ModelVersionFormat	  "1.%<AutoIncrement:43>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -1510,7 +1510,7 @@ Model {
 	      SID		      "633"
 	      Position		      [140, 18, 160, 32]
 	      ZOrder		      -13
-	      Value		      "5.1923"
+	      Value		      "-0.46154"
 	    }
 	    Line {
 	      ZOrder		      1
@@ -2876,7 +2876,6 @@ Model {
       SID		      "401"
       Position		      [340, 157, 370, 193]
       ZOrder		      -13
-      CurrentSetting	      "0"
     }
     Block {
       BlockType		      Constant
@@ -2910,8 +2909,8 @@ Model {
       "98039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863]"
       ",'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{["
       "]}},'ShowContent',true,'Placement',1)),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false),e"
-      "xtmgr.Configuration('Tools','Measurements',true,'Version','2017b')),'Version','2017b','Location',[668.2 446.2 99"
-      "2.2 685.4])"
+      "xtmgr.Configuration('Tools','Measurements',true,'Version','2017b')),'Version','2017b','Location',[799.4 360.6 11"
+      "23.4 599.8])"
       NumInputPorts	      "1"
     }
     Block {
@@ -2939,7 +2938,7 @@ Model {
       "745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames'"
       ",{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1)),extmgr.Configuration('Tools','Plot Navi"
       "gation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2017b')),'Version',"
-      "'2017b','Location',[711.4 355.8 1035.4 595])"
+      "'2017b','Location',[444.2 362.2 768.2 601.4])"
       NumInputPorts	      "1"
     }
     Block {
