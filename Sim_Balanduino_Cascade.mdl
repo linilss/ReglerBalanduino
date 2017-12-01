@@ -1,12 +1,12 @@
 Model {
-  Name			  "Sim_Balanduino_Model"
+  Name			  "Sim_Balanduino_Cascade"
   Version		  9.0
   SavedCharacterEncoding  "windows-1252"
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.43"
+    ComputedModelVersion    "1.40"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -16,7 +16,19 @@ Model {
     HasTerminateEvent	    0
     IsExportFunctionModel   0
     NumParameterArguments   0
-    NumExternalFileReferences 0
+    NumExternalFileReferences 2
+    ExternalFileReference {
+      Reference		      "simulink/Continuous/PID Controller"
+      Path		      "Sim_Balanduino_Cascade/Theta Controller"
+      SID		      "409"
+      Type		      "LIBRARY_BLOCK"
+    }
+    ExternalFileReference {
+      Reference		      "simulink/Continuous/PID Controller"
+      Path		      "Sim_Balanduino_Cascade/Velocity Controller"
+      SID		      "411"
+      Type		      "LIBRARY_BLOCK"
+    }
     OrderedModelArguments   1
   }
   LogicAnalyzerGraphicalSettings ""
@@ -50,11 +62,11 @@ Model {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
 	$ClassName		"Simulink.ModelBrowserInfo"
-	Visible			[0]
+	Visible			[1]
 	DockPosition		"Left"
 	Width			[50]
 	Height			[50]
-	Filter			[9]
+	Filter			[11]
       }
       Object {
 	$PropName		"ExplorerBarInfo"
@@ -69,9 +81,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1875.0, 833.0]
-	ZoomFactor		[1.25]
-	Offset			[0.0, 0.0]
+	Extents			[1681.0, 833.0]
+	ZoomFactor		[1.0]
+	Offset			[0.79140625000002274, -85.4625678487626]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -87,11 +99,11 @@ Model {
 	Width			[512]
 	Height			[384]
       }
-      WindowState	      "AAAA/wAAAAD9AAAAAgAAAAAAAAC9AAAB+PwCAAAAA/sAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAA"
+      WindowState	      "AAAA/wAAAAD9AAAAAgAAAAAAAAC9AAADhvwCAAAAA/sAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAA"
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
-      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAAB4AP///wAAAAEAAAAAAAAAAPwCA"
+      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQBAAAASgAAA4YAAAB4AP///wAAAAEAAAAAAAAAAPwCA"
       "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAAANAD///8AAAeAAAADhgAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
+      "QBjAHQAbwByAAAAAAD/////AAAANAD///8AAAa+AAADhgAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAACR/////wAAAAAAAAAA/////wEAAAEE/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAGV/////wAAAAAAAAAA/"
       "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAON/////wAAAAAAAAAA/"
@@ -105,9 +117,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "User"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Nov 22 16:48:20 2017"
-  RTWModifiedTimeStamp	  433430175
-  ModelVersionFormat	  "1.%<AutoIncrement:43>"
+  LastModifiedDate	  "Fri Dec 01 15:05:12 2017"
+  RTWModifiedTimeStamp	  434026328
+  ModelVersionFormat	  "1.%<AutoIncrement:40>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -140,7 +152,7 @@ Model {
   StatusBar		  on
   BrowserShowLibraryLinks off
   FunctionConnectors	  off
-  BrowserLookUnderMasks	  off
+  BrowserLookUnderMasks	  on
   SimulationMode	  "normal"
   VisualizeLoggedSignalsWhenLoggingToFile off
   PauseTimes		  "5"
@@ -159,12 +171,12 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    7
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "Sim_Balanduino_Model"
+    model_		    "Sim_Balanduino_Cascade"
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "Sim_Balanduino_Model"
+      Cell		      "Sim_Balanduino_Cascade"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -741,22 +753,22 @@ Model {
 		Dimension		18
 		Cell			"GeneratePreprocessorConditionals"
 		Cell			"IncludeMdlTerminateFcn"
-		Cell			"RemoveDisableFunc"
+		Cell			"RemoveResetFunc"
 		Cell			"SuppressErrorStatus"
 		Cell			"ERTCustomFileBanners"
 		Cell			"GenerateSampleERTMain"
 		Cell			"GenerateTestInterfaces"
 		Cell			"ModelStepFunctionPrototypeControlCompliant"
 		Cell			"CPPClassGenCompliant"
-		Cell			"RemoveResetFunc"
+		Cell			"PortableWordSizes"
 		Cell			"PurelyIntegerCode"
 		Cell			"SupportComplex"
 		Cell			"SupportAbsoluteTime"
 		Cell			"SupportContinuousTime"
 		Cell			"SupportNonInlinedSFcns"
-		Cell			"PortableWordSizes"
-		Cell			"ExistingSharedCode"
 		Cell			"GenerateAllocFcn"
+		Cell			"ExistingSharedCode"
+		Cell			"RemoveDisableFunc"
 		PropName		"DisabledProps"
 	      }
 	      Description	      ""
@@ -879,7 +891,7 @@ Model {
       Name		      "Configuration"
       ExtraOptions	      ""
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition    [ 71, 71, 935, 795 ]
+      ConfigPrmDlgPosition    [ 1218, 227, 2098, 857 ]
     }
     PropName		    "ConfigurationSets"
   }
@@ -985,6 +997,14 @@ Model {
       CoefficientInTFapproximation "inf"
     }
     Block {
+      BlockType		      Display
+      Format		      "short"
+      Decimation	      "10"
+      Floating		      off
+      Lockdown		      off
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      Fcn
       Expr		      "sin(u[1])"
       SampleTime	      "-1"
@@ -1079,6 +1099,14 @@ Model {
       VectorParamsAs1DForOutWhenUnconnected off
     }
     Block {
+      BlockType		      RandomNumber
+      Mean		      "0"
+      Variance		      "1"
+      Seed		      "0"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+    }
+    Block {
       BlockType		      S-Function
       FunctionName	      "system"
       SFunctionModules	      "''"
@@ -1133,6 +1161,22 @@ Model {
       IsObserver	      off
     }
     Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      Switch
       Criteria		      "u2 >= Threshold"
       Threshold		      "0"
@@ -1160,11 +1204,11 @@ Model {
     }
   }
   System {
-    Name		    "Sim_Balanduino_Model"
+    Name		    "Sim_Balanduino_Cascade"
     Location		    [-7, -7, 1543, 831]
     Open		    on
     PortBlocksUseCompactNotation off
-    ModelBrowserVisibility  off
+    ModelBrowserVisibility  on
     ModelBrowserWidth	    200
     ScreenColor		    "white"
     PaperOrientation	    "landscape"
@@ -1174,15 +1218,15 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "125"
+    ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "703"
+    SIDHighWatermark	    "692"
     Block {
       BlockType		      SubSystem
       Name		      "Balanduino Robot"
-      SID		      "616"
+      SID		      "596"
       Ports		      [2, 3]
-      Position		      [550, 155, 640, 235]
+      Position		      [735, 215, 825, 295]
       ZOrder		      -1
       BackgroundColor	      "red"
       RequestExecContextInheritance off
@@ -1265,10 +1309,10 @@ Model {
       }
       System {
 	Name			"Balanduino Robot"
-	Location		[472, 147, 2128, 1470]
+	Location		[33, 95, 1349, 833]
 	Open			off
 	PortBlocksUseCompactNotation off
-	ModelBrowserVisibility	off
+	ModelBrowserVisibility	on
 	ModelBrowserWidth	200
 	ScreenColor		"white"
 	PaperOrientation	"landscape"
@@ -1282,7 +1326,7 @@ Model {
 	Block {
 	  BlockType		  Inport
 	  Name			  "Model"
-	  SID			  "617"
+	  SID			  "597"
 	  Position		  [715, 290, 735, 310]
 	  ZOrder		  -1
 	  IconDisplay		  "Port number"
@@ -1290,7 +1334,7 @@ Model {
 	Block {
 	  BlockType		  Inport
 	  Name			  "U"
-	  SID			  "618"
+	  SID			  "598"
 	  Position		  [70, 205, 90, 225]
 	  ZOrder		  -2
 	  Port			  "2"
@@ -1299,7 +1343,7 @@ Model {
 	Block {
 	  BlockType		  BusCreator
 	  Name			  "Bus\nCreator"
-	  SID			  "619"
+	  SID			  "599"
 	  Ports			  [3, 1]
 	  Position		  [625, 611, 630, 649]
 	  ZOrder		  -2
@@ -1311,7 +1355,7 @@ Model {
 	Block {
 	  BlockType		  BusCreator
 	  Name			  "Bus\nCreator1"
-	  SID			  "620"
+	  SID			  "600"
 	  Ports			  [3, 1]
 	  Position		  [625, 451, 630, 489]
 	  ZOrder		  -2
@@ -1323,7 +1367,7 @@ Model {
 	Block {
 	  BlockType		  BusCreator
 	  Name			  "Bus\nCreator2"
-	  SID			  "621"
+	  SID			  "601"
 	  Ports			  [3, 1]
 	  Position		  [645, 326, 650, 364]
 	  ZOrder		  -2
@@ -1335,7 +1379,7 @@ Model {
 	Block {
 	  BlockType		  BusCreator
 	  Name			  "Bus\nCreator3"
-	  SID			  "622"
+	  SID			  "602"
 	  Ports			  [3, 1]
 	  Position		  [650, 146, 655, 184]
 	  ZOrder		  -2
@@ -1347,7 +1391,7 @@ Model {
 	Block {
 	  BlockType		  Demux
 	  Name			  "Demux"
-	  SID			  "623"
+	  SID			  "603"
 	  Ports			  [1, 3]
 	  Position		  [950, 311, 955, 349]
 	  ZOrder		  -7
@@ -1358,7 +1402,7 @@ Model {
 	Block {
 	  BlockType		  Demux
 	  Name			  "Demux1"
-	  SID			  "624"
+	  SID			  "604"
 	  Ports			  [1, 3]
 	  Position		  [955, 451, 960, 489]
 	  ZOrder		  -7
@@ -1369,7 +1413,7 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "Inverted Pendulum \nAnimation"
-	  SID			  "625"
+	  SID			  "605"
 	  Ports			  [2]
 	  Position		  [1065, 444, 1130, 511]
 	  ZOrder		  -9
@@ -1377,10 +1421,10 @@ Model {
 	  Variant		  off
 	  System {
 	    Name		    "Inverted Pendulum \nAnimation"
-	    Location		    [1637, 465, 2118, 851]
+	    Location		    [1629, 457, 2094, 837]
 	    Open		    off
 	    PortBlocksUseCompactNotation off
-	    ModelBrowserVisibility  off
+	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
 	    PaperOrientation	    "landscape"
@@ -1394,7 +1438,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Cart"
-	      SID		      "626"
+	      SID		      "606"
 	      Position		      [40, 58, 70, 72]
 	      ZOrder		      -1
 	      IconDisplay	      "Port number"
@@ -1402,7 +1446,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Pendulum"
-	      SID		      "627"
+	      SID		      "607"
 	      Position		      [15, 98, 45, 112]
 	      ZOrder		      -2
 	      Port		      "2"
@@ -1411,7 +1455,7 @@ Model {
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "Animation"
-	      SID		      "628"
+	      SID		      "608"
 	      Ports		      [1]
 	      Position		      [350, 40, 405, 90]
 	      ZOrder		      -3
@@ -1438,10 +1482,10 @@ Model {
 	      }
 	      System {
 		Name			"Animation"
-		Location		[606, 477, 903, 759]
+		Location		[598, 469, 879, 745]
 		Open			off
 		PortBlocksUseCompactNotation off
-		ModelBrowserVisibility	off
+		ModelBrowserVisibility	on
 		ModelBrowserWidth	200
 		ScreenColor		"white"
 		PaperOrientation	"landscape"
@@ -1455,7 +1499,7 @@ Model {
 		Block {
 		  BlockType		  Inport
 		  Name			  "in_1"
-		  SID			  "629"
+		  SID			  "609"
 		  Position		  [40, 25, 60, 45]
 		  ZOrder		  -1
 		  IconDisplay		  "Port number"
@@ -1463,7 +1507,7 @@ Model {
 		Block {
 		  BlockType		  S-Function
 		  Name			  "S-function"
-		  SID			  "630"
+		  SID			  "610"
 		  Ports			  [1]
 		  Position		  [95, 23, 150, 47]
 		  ZOrder		  -2
@@ -1486,7 +1530,7 @@ Model {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "Change sign"
-	      SID		      "631"
+	      SID		      "611"
 	      Position		      [90, 92, 115, 118]
 	      ZOrder		      -11
 	      Gain		      "-1"
@@ -1497,7 +1541,7 @@ Model {
 	    Block {
 	      BlockType		      Mux
 	      Name		      "Mux"
-	      SID		      "632"
+	      SID		      "612"
 	      Ports		      [3, 1]
 	      Position		      [210, 49, 240, 81]
 	      ZOrder		      -12
@@ -1507,10 +1551,10 @@ Model {
 	    Block {
 	      BlockType		      Constant
 	      Name		      "Reference"
-	      SID		      "633"
+	      SID		      "613"
 	      Position		      [140, 18, 160, 32]
 	      ZOrder		      -13
-	      Value		      "-0.46154"
+	      Value		      "0"
 	    }
 	    Line {
 	      ZOrder		      1
@@ -1550,7 +1594,7 @@ Model {
 	      DstPort		      1
 	    }
 	    Annotation {
-	      SID		      "634"
+	      SID		      "614"
 	      Name		      "We have to change sign on theta angle\nto get the animation right"
 	      Position		      [64, 137, 238, 163]
 	      InternalMargins	      [0, 0, 0, 0]
@@ -1561,7 +1605,7 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "Linear Model where motor inductance and \nback emf is neglected"
-	  SID			  "635"
+	  SID			  "615"
 	  Ports			  [1, 3]
 	  Position		  [495, 579, 600, 681]
 	  ZOrder		  -10
@@ -1569,10 +1613,10 @@ Model {
 	  Variant		  off
 	  System {
 	    Name		    "Linear Model where motor inductance and \nback emf is neglected"
-	    Location		    [1046, 902, 1685, 1398]
+	    Location		    [33, 95, 1349, 833]
 	    Open		    off
 	    PortBlocksUseCompactNotation off
-	    ModelBrowserVisibility  off
+	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
 	    PaperOrientation	    "landscape"
@@ -1586,7 +1630,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Force"
-	      SID		      "636"
+	      SID		      "616"
 	      Position		      [60, 93, 90, 107]
 	      ZOrder		      -1
 	      IconDisplay	      "Port number"
@@ -1594,14 +1638,14 @@ Model {
 	    Block {
 	      BlockType		      Derivative
 	      Name		      "Derivative"
-	      SID		      "637"
+	      SID		      "617"
 	      Position		      [415, 85, 445, 115]
 	      ZOrder		      -1
 	    }
 	    Block {
 	      BlockType		      TransferFcn
 	      Name		      "Motor voltage to Theta"
-	      SID		      "638"
+	      SID		      "618"
 	      Position		      [125, 82, 185, 118]
 	      ZOrder		      -9
 	      Numerator		      "[1/(Mb*d)]"
@@ -1610,7 +1654,7 @@ Model {
 	    Block {
 	      BlockType		      TransferFcn
 	      Name		      "Theta to x-pos"
-	      SID		      "639"
+	      SID		      "619"
 	      Position		      [270, 82, 330, 118]
 	      ZOrder		      -9
 	      Numerator		      "[d 0 -g]"
@@ -1619,7 +1663,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "x_pos"
-	      SID		      "640"
+	      SID		      "620"
 	      Position		      [365, 63, 395, 77]
 	      ZOrder		      -11
 	      IconDisplay	      "Port number"
@@ -1627,7 +1671,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "x_dot"
-	      SID		      "641"
+	      SID		      "621"
 	      Position		      [515, 93, 545, 107]
 	      ZOrder		      -12
 	      Port		      "2"
@@ -1636,7 +1680,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Theta"
-	      SID		      "642"
+	      SID		      "622"
 	      Position		      [270, 33, 300, 47]
 	      ZOrder		      -13
 	      Port		      "3"
@@ -1660,16 +1704,15 @@ Model {
 	      ZOrder		      3
 	      SrcBlock		      "Theta to x-pos"
 	      SrcPort		      1
-	      Points		      [20, 0]
+	      Points		      [15, 0]
 	      Branch {
-		ZOrder			4
-		Points			[-5, 0]
-		DstBlock		"x_pos"
+		ZOrder			10
+		DstBlock		"Derivative"
 		DstPort			1
 	      }
 	      Branch {
-		ZOrder			5
-		DstBlock		"Derivative"
+		ZOrder			4
+		DstBlock		"x_pos"
 		DstPort			1
 	      }
 	    }
@@ -1677,10 +1720,9 @@ Model {
 	      ZOrder		      6
 	      SrcBlock		      "Motor voltage to Theta"
 	      SrcPort		      1
-	      Points		      [45, 0]
+	      Points		      [65, 0]
 	      Branch {
 		ZOrder			7
-		Points			[20, 0]
 		DstBlock		"Theta"
 		DstPort			1
 	      }
@@ -1691,14 +1733,14 @@ Model {
 	      }
 	    }
 	    Annotation {
-	      SID		      "644"
+	      SID		      "624"
 	      Name		      "x-pos"
 	      Position		      [370, 103, 396, 117]
 	      InternalMargins	      [0, 0, 0, 0]
 	      ZOrder		      -1
 	    }
 	    Annotation {
-	      SID		      "643"
+	      SID		      "623"
 	      Name		      "theta"
 	      Position		      [213, 83, 237, 97]
 	      InternalMargins	      [0, 0, 0, 0]
@@ -1709,7 +1751,7 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "Linear Model with motor \ninductance and back emf "
-	  SID			  "645"
+	  SID			  "625"
 	  Ports			  [1, 3]
 	  Position		  [495, 269, 600, 371]
 	  ZOrder		  -11
@@ -1717,10 +1759,10 @@ Model {
 	  Variant		  off
 	  System {
 	    Name		    "Linear Model with motor \ninductance and back emf "
-	    Location		    [319, 573, 958, 1069]
+	    Location		    [33, 95, 1349, 833]
 	    Open		    off
 	    PortBlocksUseCompactNotation off
-	    ModelBrowserVisibility  off
+	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
 	    PaperOrientation	    "landscape"
@@ -1734,7 +1776,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Voltage"
-	      SID		      "646"
+	      SID		      "626"
 	      Position		      [35, 93, 65, 107]
 	      ZOrder		      -1
 	      IconDisplay	      "Port number"
@@ -1742,14 +1784,14 @@ Model {
 	    Block {
 	      BlockType		      Derivative
 	      Name		      "Derivative"
-	      SID		      "647"
+	      SID		      "627"
 	      Position		      [415, 85, 445, 115]
 	      ZOrder		      -1
 	    }
 	    Block {
 	      BlockType		      TransferFcn
 	      Name		      "Motor voltage to Theta"
-	      SID		      "648"
+	      SID		      "628"
 	      Position		      [125, 82, 185, 118]
 	      ZOrder		      -9
 	      Numerator		      "[Km*r 0]"
@@ -1758,7 +1800,7 @@ Model {
 	    Block {
 	      BlockType		      TransferFcn
 	      Name		      "Theta to x-pos"
-	      SID		      "649"
+	      SID		      "629"
 	      Position		      [270, 82, 330, 118]
 	      ZOrder		      -9
 	      Numerator		      "[d 0 -g]"
@@ -1767,7 +1809,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "x_pos"
-	      SID		      "650"
+	      SID		      "630"
 	      Position		      [365, 63, 395, 77]
 	      ZOrder		      -11
 	      IconDisplay	      "Port number"
@@ -1775,7 +1817,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "x_dot"
-	      SID		      "651"
+	      SID		      "631"
 	      Position		      [515, 93, 545, 107]
 	      ZOrder		      -12
 	      Port		      "2"
@@ -1784,7 +1826,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Theta"
-	      SID		      "652"
+	      SID		      "632"
 	      Position		      [270, 33, 300, 47]
 	      ZOrder		      -13
 	      Port		      "3"
@@ -1811,15 +1853,14 @@ Model {
 	      ZOrder		      4
 	      SrcBlock		      "Theta to x-pos"
 	      SrcPort		      1
-	      Points		      [20, 0]
+	      Points		      [15, 0]
 	      Branch {
-		ZOrder			5
+		ZOrder			9
 		DstBlock		"Derivative"
 		DstPort			1
 	      }
 	      Branch {
 		ZOrder			6
-		Points			[-5, 0]
 		DstBlock		"x_pos"
 		DstPort			1
 	      }
@@ -1839,14 +1880,14 @@ Model {
 	      DstPort		      1
 	    }
 	    Annotation {
-	      SID		      "654"
+	      SID		      "634"
 	      Name		      "theta"
 	      Position		      [213, 83, 237, 97]
 	      InternalMargins	      [0, 0, 0, 0]
 	      ZOrder		      -1
 	    }
 	    Annotation {
-	      SID		      "653"
+	      SID		      "633"
 	      Name		      "x-pos"
 	      Position		      [370, 103, 396, 117]
 	      InternalMargins	      [0, 0, 0, 0]
@@ -1857,7 +1898,7 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "Nonlinear Model\nwith motor \ninductance and back-emf"
-	  SID			  "655"
+	  SID			  "635"
 	  Ports			  [1, 3]
 	  Position		  [495, 119, 600, 211]
 	  ZOrder		  -12
@@ -1865,10 +1906,10 @@ Model {
 	  Variant		  off
 	  System {
 	    Name		    "Nonlinear Model\nwith motor \ninductance and back-emf"
-	    Location		    [359, 240, 1201, 931]
+	    Location		    [33, 95, 1349, 833]
 	    Open		    off
 	    PortBlocksUseCompactNotation off
-	    ModelBrowserVisibility  off
+	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
 	    PaperOrientation	    "landscape"
@@ -1882,7 +1923,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Voltage"
-	      SID		      "656"
+	      SID		      "636"
 	      Position		      [60, 63, 90, 77]
 	      ZOrder		      -1
 	      IconDisplay	      "Port number"
@@ -1890,7 +1931,7 @@ Model {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "Current to Force"
-	      SID		      "657"
+	      SID		      "637"
 	      Position		      [195, 112, 240, 158]
 	      ZOrder		      -11
 	      BlockMirror	      on
@@ -1902,7 +1943,7 @@ Model {
 	    Block {
 	      BlockType		      Fcn
 	      Name		      "Fcn1"
-	      SID		      "658"
+	      SID		      "638"
 	      Position		      [390, 70, 430, 90]
 	      ZOrder		      -12
 	      ShowName		      off
@@ -1911,7 +1952,7 @@ Model {
 	    Block {
 	      BlockType		      Fcn
 	      Name		      "Fcn2"
-	      SID		      "659"
+	      SID		      "639"
 	      Position		      [360, 300, 400, 320]
 	      ZOrder		      -13
 	      ShowName		      off
@@ -1921,7 +1962,7 @@ Model {
 	    Block {
 	      BlockType		      Fcn
 	      Name		      "Fcn3"
-	      SID		      "660"
+	      SID		      "640"
 	      Position		      [360, 215, 400, 235]
 	      ZOrder		      -14
 	      ShowName		      off
@@ -1930,7 +1971,7 @@ Model {
 	    Block {
 	      BlockType		      Integrator
 	      Name		      "Integrator1"
-	      SID		      "661"
+	      SID		      "641"
 	      Ports		      [1, 1]
 	      Position		      [535, 215, 555, 235]
 	      ZOrder		      -15
@@ -1939,7 +1980,7 @@ Model {
 	    Block {
 	      BlockType		      Integrator
 	      Name		      "Integrator2"
-	      SID		      "662"
+	      SID		      "642"
 	      Ports		      [1, 1]
 	      Position		      [535, 300, 555, 320]
 	      ZOrder		      -16
@@ -1948,7 +1989,7 @@ Model {
 	    Block {
 	      BlockType		      Integrator
 	      Name		      "Integrator3"
-	      SID		      "663"
+	      SID		      "643"
 	      Ports		      [1, 1]
 	      Position		      [455, 300, 475, 320]
 	      ZOrder		      -17
@@ -1957,7 +1998,7 @@ Model {
 	    Block {
 	      BlockType		      Integrator
 	      Name		      "Integrator4"
-	      SID		      "664"
+	      SID		      "644"
 	      Ports		      [1, 1]
 	      Position		      [455, 215, 475, 235]
 	      ZOrder		      -18
@@ -1966,7 +2007,7 @@ Model {
 	    Block {
 	      BlockType		      Integrator
 	      Name		      "Integrator5"
-	      SID		      "665"
+	      SID		      "645"
 	      Ports		      [1, 1]
 	      Position		      [470, 70, 490, 90]
 	      ZOrder		      -19
@@ -1975,7 +2016,7 @@ Model {
 	    Block {
 	      BlockType		      Mux
 	      Name		      "Mux"
-	      SID		      "666"
+	      SID		      "646"
 	      Ports		      [3, 1]
 	      Position		      [290, 294, 320, 326]
 	      ZOrder		      -20
@@ -1985,7 +2026,7 @@ Model {
 	    Block {
 	      BlockType		      Mux
 	      Name		      "Mux1"
-	      SID		      "667"
+	      SID		      "647"
 	      Ports		      [3, 1]
 	      Position		      [290, 209, 320, 241]
 	      ZOrder		      -21
@@ -1995,7 +2036,7 @@ Model {
 	    Block {
 	      BlockType		      Mux
 	      Name		      "Mux2"
-	      SID		      "668"
+	      SID		      "648"
 	      Ports		      [3, 1]
 	      Position		      [330, 64, 360, 96]
 	      ZOrder		      -22
@@ -2005,7 +2046,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "x-pos"
-	      SID		      "669"
+	      SID		      "649"
 	      Position		      [580, 218, 610, 232]
 	      ZOrder		      -23
 	      IconDisplay	      "Port number"
@@ -2013,7 +2054,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "x_dot"
-	      SID		      "670"
+	      SID		      "650"
 	      Position		      [650, 173, 680, 187]
 	      ZOrder		      -24
 	      Port		      "2"
@@ -2022,7 +2063,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Theta"
-	      SID		      "671"
+	      SID		      "651"
 	      Position		      [680, 303, 710, 317]
 	      ZOrder		      -25
 	      Port		      "3"
@@ -2032,16 +2073,15 @@ Model {
 	      ZOrder		      1
 	      SrcBlock		      "Current to Force"
 	      SrcPort		      1
-	      Points		      [-25, 0; 0, 75]
+	      Points		      [-25, 0; 0, 80]
 	      Branch {
 		ZOrder			2
-		Points			[0, 90]
+		Points			[0, 85]
 		DstBlock		"Mux"
 		DstPort			1
 	      }
 	      Branch {
 		ZOrder			3
-		Points			[0, 5]
 		DstBlock		"Mux1"
 		DstPort			1
 	      }
@@ -2154,17 +2194,17 @@ Model {
 	      Points		      [35, 0]
 	      Branch {
 		ZOrder			22
-		Points			[0, -45; 5, 0]
+		Points			[0, -45]
 		Branch {
-		  ZOrder		  23
-		  Points		  [-215, 0; 0, -100]
-		  DstBlock		  "Mux2"
-		  DstPort		  2
-		}
-		Branch {
-		  ZOrder		  24
+		  ZOrder		  30
 		  DstBlock		  "x_dot"
 		  DstPort		  1
+		}
+		Branch {
+		  ZOrder		  23
+		  Points		  [-210, 0; 0, -100]
+		  DstBlock		  "Mux2"
+		  DstPort		  2
 		}
 	      }
 	      Branch {
@@ -2202,21 +2242,21 @@ Model {
 	      DstPort		      1
 	    }
 	    Annotation {
-	      SID		      "674"
+	      SID		      "654"
 	      Name		      "Motor current"
 	      Position		      [519, 72, 580, 86]
 	      InternalMargins	      [0, 0, 0, 0]
 	      ZOrder		      -1
 	    }
 	    Annotation {
-	      SID		      "673"
+	      SID		      "653"
 	      Name		      "theta"
 	      Position		      [652, 292, 676, 306]
 	      InternalMargins	      [0, 0, 0, 0]
 	      ZOrder		      -2
 	    }
 	    Annotation {
-	      SID		      "672"
+	      SID		      "652"
 	      Name		      "x_pos"
 	      Position		      [619, 212, 647, 226]
 	      InternalMargins	      [0, 0, 0, 0]
@@ -2227,7 +2267,7 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "Nonlinear Model where motor \ninductance and back-emf is neglected"
-	  SID			  "675"
+	  SID			  "655"
 	  Ports			  [1, 3]
 	  Position		  [495, 424, 600, 516]
 	  ZOrder		  -13
@@ -2235,10 +2275,10 @@ Model {
 	  Variant		  off
 	  System {
 	    Name		    "Nonlinear Model where motor \ninductance and back-emf is neglected"
-	    Location		    [1501, 209, 2330, 729]
+	    Location		    [33, 95, 1349, 833]
 	    Open		    off
 	    PortBlocksUseCompactNotation off
-	    ModelBrowserVisibility  off
+	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
 	    PaperOrientation	    "landscape"
@@ -2252,7 +2292,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Force"
-	      SID		      "676"
+	      SID		      "656"
 	      Position		      [70, 73, 100, 87]
 	      ZOrder		      -1
 	      IconDisplay	      "Port number"
@@ -2260,7 +2300,7 @@ Model {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "Change sign"
-	      SID		      "677"
+	      SID		      "657"
 	      Position		      [510, 157, 555, 193]
 	      ZOrder		      -11
 	      Gain		      "-1"
@@ -2271,7 +2311,7 @@ Model {
 	    Block {
 	      BlockType		      Fcn
 	      Name		      "Fcn1"
-	      SID		      "678"
+	      SID		      "658"
 	      Position		      [260, 80, 300, 100]
 	      ZOrder		      -12
 	      ShowName		      off
@@ -2280,7 +2320,7 @@ Model {
 	    Block {
 	      BlockType		      Fcn
 	      Name		      "Fcn2"
-	      SID		      "679"
+	      SID		      "659"
 	      Position		      [260, 165, 300, 185]
 	      ZOrder		      -13
 	      ShowName		      off
@@ -2290,7 +2330,7 @@ Model {
 	    Block {
 	      BlockType		      Integrator
 	      Name		      "Integrator1"
-	      SID		      "680"
+	      SID		      "660"
 	      Ports		      [1, 1]
 	      Position		      [435, 80, 455, 100]
 	      ZOrder		      -14
@@ -2299,7 +2339,7 @@ Model {
 	    Block {
 	      BlockType		      Integrator
 	      Name		      "Integrator2"
-	      SID		      "681"
+	      SID		      "661"
 	      Ports		      [1, 1]
 	      Position		      [435, 165, 455, 185]
 	      ZOrder		      -15
@@ -2308,7 +2348,7 @@ Model {
 	    Block {
 	      BlockType		      Integrator
 	      Name		      "Integrator3"
-	      SID		      "682"
+	      SID		      "662"
 	      Ports		      [1, 1]
 	      Position		      [355, 165, 375, 185]
 	      ZOrder		      -16
@@ -2317,7 +2357,7 @@ Model {
 	    Block {
 	      BlockType		      Integrator
 	      Name		      "Integrator4"
-	      SID		      "683"
+	      SID		      "663"
 	      Ports		      [1, 1]
 	      Position		      [355, 80, 375, 100]
 	      ZOrder		      -17
@@ -2326,7 +2366,7 @@ Model {
 	    Block {
 	      BlockType		      Mux
 	      Name		      "Mux"
-	      SID		      "684"
+	      SID		      "664"
 	      Ports		      [3, 1]
 	      Position		      [190, 159, 220, 191]
 	      ZOrder		      -18
@@ -2336,7 +2376,7 @@ Model {
 	    Block {
 	      BlockType		      Mux
 	      Name		      "Mux1"
-	      SID		      "685"
+	      SID		      "665"
 	      Ports		      [3, 1]
 	      Position		      [190, 74, 220, 106]
 	      ZOrder		      -19
@@ -2346,7 +2386,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "x-pos"
-	      SID		      "686"
+	      SID		      "666"
 	      Position		      [480, 83, 510, 97]
 	      ZOrder		      -20
 	      IconDisplay	      "Port number"
@@ -2354,7 +2394,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "x_dot"
-	      SID		      "687"
+	      SID		      "667"
 	      Position		      [470, 33, 500, 47]
 	      ZOrder		      -21
 	      Port		      "2"
@@ -2363,7 +2403,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Theta"
-	      SID		      "688"
+	      SID		      "668"
 	      Position		      [580, 168, 610, 182]
 	      ZOrder		      -22
 	      Port		      "3"
@@ -2501,7 +2541,7 @@ Model {
 	      DstPort		      1
 	    }
 	    Annotation {
-	      SID		      "691"
+	      SID		      "671"
 	      Name		      "This model is taken from Simulink example \"penddemo\". \nIn that model the theta angle is defined"
 	      " in the opposite \ndirection consequently we have to multiply with -1. "
 	      Position		      [379, 217, 633, 255]
@@ -2509,14 +2549,14 @@ Model {
 	      ZOrder		      -1
 	    }
 	    Annotation {
-	      SID		      "690"
+	      SID		      "670"
 	      Name		      "theta"
 	      Position		      [552, 157, 576, 171]
 	      InternalMargins	      [0, 0, 0, 0]
 	      ZOrder		      -2
 	    }
 	    Annotation {
-	      SID		      "689"
+	      SID		      "669"
 	      Name		      "x_pos"
 	      Position		      [519, 77, 547, 91]
 	      InternalMargins	      [0, 0, 0, 0]
@@ -2527,7 +2567,7 @@ Model {
 	Block {
 	  BlockType		  Switch
 	  Name			  "Switch"
-	  SID			  "692"
+	  SID			  "672"
 	  Position		  [870, 310, 920, 350]
 	  ZOrder		  -18
 	  Criteria		  "u2 > Threshold"
@@ -2537,28 +2577,28 @@ Model {
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator"
-	  SID			  "693"
+	  SID			  "673"
 	  Position		  [1005, 460, 1025, 480]
 	  ZOrder		  -5
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator1"
-	  SID			  "694"
+	  SID			  "674"
 	  Position		  [685, 460, 705, 480]
 	  ZOrder		  -5
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator2"
-	  SID			  "695"
+	  SID			  "675"
 	  Position		  [695, 620, 715, 640]
 	  ZOrder		  -5
 	}
 	Block {
 	  BlockType		  Gain
 	  Name			  "To force"
-	  SID			  "696"
+	  SID			  "676"
 	  Position		  [355, 446, 410, 494]
 	  ZOrder		  -11
 	  Gain			  "1/r"
@@ -2569,7 +2609,7 @@ Model {
 	Block {
 	  BlockType		  Gain
 	  Name			  "To torque"
-	  SID			  "697"
+	  SID			  "677"
 	  Position		  [255, 446, 310, 494]
 	  ZOrder		  -11
 	  Gain			  "Km/Ra"
@@ -2580,7 +2620,7 @@ Model {
 	Block {
 	  BlockType		  Outport
 	  Name			  "x_pos"
-	  SID			  "698"
+	  SID			  "678"
 	  Position		  [1080, 245, 1100, 265]
 	  ZOrder		  -24
 	  IconDisplay		  "Port number"
@@ -2589,7 +2629,7 @@ Model {
 	Block {
 	  BlockType		  Outport
 	  Name			  "x_dot"
-	  SID			  "699"
+	  SID			  "679"
 	  Position		  [1080, 320, 1100, 340]
 	  ZOrder		  -25
 	  Port			  "2"
@@ -2599,7 +2639,7 @@ Model {
 	Block {
 	  BlockType		  Outport
 	  Name			  "Theta"
-	  SID			  "700"
+	  SID			  "680"
 	  Position		  [1080, 390, 1100, 410]
 	  ZOrder		  -26
 	  Port			  "3"
@@ -2688,16 +2728,15 @@ Model {
 	  Points		  [45, 0]
 	  Branch {
 	    ZOrder		    12
-	    Points		    [0, 100]
+	    Points		    [0, 105]
 	    Branch {
 	      ZOrder		      13
-	      Points		      [0, 155]
+	      Points		      [0, 150]
 	      DstBlock		      "To torque"
 	      DstPort		      1
 	    }
 	    Branch {
 	      ZOrder		      14
-	      Points		      [0, 5]
 	      DstBlock		      "Linear Model with motor \ninductance and back emf "
 	      DstPort		      1
 	    }
@@ -2853,7 +2892,7 @@ Model {
 	  }
 	}
 	Annotation {
-	  SID			  "701"
+	  SID			  "681"
 	  Name			  "Voltage"
 	  Position		  [106, 202, 141, 216]
 	  InternalMargins	  [0, 0, 0, 0]
@@ -2862,10 +2901,46 @@ Model {
       }
     }
     Block {
+      BlockType		      Scope
+      Name		      "Control signal"
+      SID		      "686"
+      Ports		      [1]
+      Position		      [755, 394, 785, 426]
+      ZOrder		      3
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
+      "ources','WiredSimulink',true,'DataLoggingVariableName','ScopeData3','DataLoggingSaveFormat','StructureWithTime',"
+      "'DataLoggingDecimation','1','DataLoggingDecimateData',true),extmgr.Configuration('Visuals','Time Domain',true,'S"
+      "erializedDisplays',{struct('MinYLimReal','-1.75','MaxYLimReal','0.25','YLabelReal','','MinYLimMag','0','MaxYLimM"
+      "ag','10','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickCo"
+      "lor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.074509803921"
+      "5686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.074509803921"
+      "5686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title"
+      "','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'Theta C"
+      "ontroller'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-1.75','MaxYLimR"
+      "eal','0.25','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','off','XGrid',true,'YGrid',tru"
+      "e,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.68627450980392"
+      "2],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372"
+      "549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117"
+      "647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefined"
+      "ChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1)),extmgr.Configuration('Tool"
+      "s','Plot Navigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2017b'"
+      ")),'Version','2017b','Location',[596.2 226.2 920.2 465.4])"
+      NumInputPorts	      "1"
+    }
+    Block {
       BlockType		      Constant
-      Name		      "Linear model\n4th order system"
+      Name		      "Full non-linear model"
+      SID		      "403"
+      Position		      [545, 115, 575, 145]
+      ZOrder		      -4
+      BackgroundColor	      "orange"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Linear model\n4th order system\nwith motor inductance\nand back-EMF"
       SID		      "402"
-      Position		      [240, 70, 270, 100]
+      Position		      [545, 20, 575, 50]
       ZOrder		      -4
       BackgroundColor	      "lightBlue"
       Value		      "0"
@@ -2874,129 +2949,312 @@ Model {
       BlockType		      ManualSwitch
       Name		      "Manual Switch"
       SID		      "401"
-      Position		      [340, 157, 370, 193]
+      Position		      [715, 47, 745, 83]
       ZOrder		      -13
     }
     Block {
-      BlockType		      Constant
-      Name		      "Non-linear model"
-      SID		      "403"
-      Position		      [240, 170, 270, 200]
-      ZOrder		      -4
-      BackgroundColor	      "orange"
+      BlockType		      RandomNumber
+      Name		      "Measurement noise"
+      SID		      "691"
+      Position		      [975, 325, 1005, 355]
+      ZOrder		      8
+      BlockMirror	      on
+      Variance		      "0.01"
+      SampleTime	      "0.1"
     }
     Block {
       BlockType		      Scope
-      Name		      "Scope"
-      SID		      "599"
+      Name		      "Position"
+      SID		      "683"
       Ports		      [1]
-      Position		      [835, 204, 865, 236]
-      ZOrder		      -16
-      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
-      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
-      "ources','WiredSimulink',true,'DataLoggingSaveFormat','StructureWithTime','DataLoggingDecimation','1','DataLoggin"
-      "gDecimateData',true),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal"
-      "','0','MaxYLimReal','2.5e+24','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','off','XGrid"
-      "',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.68627450980392"
-      "2 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.41176470588"
-      "2353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569"
-      " 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache'"
-      ",{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'To degrees'}},'ShowContent',true,'Placement',1)"
-      "},'DisplayPropertyDefaults',struct('MinYLimReal','0','MaxYLimReal','2.5e+24','YLabelReal','','MinYLimMag','0','M"
-      "axYLimMag','10','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'Axe"
-      "sTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.07450"
-      "98039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.07450"
-      "98039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863]"
-      ",'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{["
-      "]}},'ShowContent',true,'Placement',1)),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false),e"
-      "xtmgr.Configuration('Tools','Measurements',true,'Version','2017b')),'Version','2017b','Location',[799.4 360.6 11"
-      "23.4 599.8],'VisibleAtModelOpen','on')"
+      Position		      [1080, 89, 1110, 121]
+      ZOrder		      -3
+      ScopeSpecificationString "C++SS(StrPVP('Location','[1859, 557, 2183, 796]'),StrPVP('Open','off'),MxPVP('AxesTitl"
+      "es',53,'struct(''axes1'',''%<SignalLabel>'')'),MxPVP('ScopeGraphics',56,'struct(''FigureColor'',''[0.50196078431"
+      "3725 0.501960784313725 0.501960784313725]'',''AxesColor'',''[0 0 0]'',''AxesTickColor'',''[1 1 1]'',''LineColors"
+      "'',''[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]'',''LineStyles'',''-|-|-|-|-|-'',''LineWidths'',''[0.5 0.5 0.5 0.5 0."
+      "5 0.5]'',''MarkerStyles'',''none|none|none|none|none|none'')'),StrPVP('ShowLegends','off'),StrPVP('YMin','-1.75'"
+      "),StrPVP('YMax','0.25'),StrPVP('DataFormat','StructureWithTime'),StrPVP('LimitDataPoints','off'),StrPVP('BlockPa"
+      "ramSampleTime','0'),StrPVP('Decimation','1'),StrPVP('BlockParamSampleInput','off'))"
       NumInputPorts	      "1"
     }
     Block {
-      BlockType		      Scope
-      Name		      "Scope1"
-      SID		      "609"
+      BlockType		      Display
+      Name		      "Position - x [m]"
+      SID		      "506"
       Ports		      [1]
-      Position		      [835, 369, 865, 401]
-      ZOrder		      -16
+      Position		      [1165, 185, 1255, 215]
+      ZOrder		      -1
+      BackgroundColor	      "magenta"
+      Decimation	      "1"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Ref angle corr [deg]"
+      SID		      "461"
+      Ports		      [1]
+      Position		      [305, 60, 395, 90]
+      ZOrder		      -1
+      BlockMirror	      on
+      BackgroundColor	      "magenta"
+      Decimation	      "1"
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum1"
+      SID		      "410"
+      Ports		      [2, 1]
+      Position		      [225, 270, 245, 290]
+      ZOrder		      -18
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|+-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum2"
+      SID		      "158"
+      Ports		      [2, 1]
+      Position		      [520, 265, 540, 285]
+      ZOrder		      -18
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|+-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum3"
+      SID		      "416"
+      Ports		      [2, 1]
+      Position		      [855, 330, 875, 350]
+      ZOrder		      -18
+      BlockRotation	      270
+      BlockMirror	      on
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|++"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      ManualSwitch
+      Name		      "Switch between\ntheta and cascade control"
+      SID		      "423"
+      Position		      [425, 252, 455, 288]
+      ZOrder		      -13
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Theta"
+      SID		      "685"
+      Ports		      [1]
+      Position		      [915, 134, 945, 166]
+      ZOrder		      2
       ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
       "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
-      "ources','WiredSimulink',true,'DataLoggingVariableName','ScopeData1','DataLoggingSaveFormat','StructureWithTime',"
+      "ources','WiredSimulink',true,'DataLoggingVariableName','ScopeData2','DataLoggingSaveFormat','StructureWithTime',"
       "'DataLoggingDecimation','1','DataLoggingDecimateData',true),extmgr.Configuration('Visuals','Time Domain',true,'S"
-      "erializedDisplays',{struct('MinYLimReal','0','MaxYLimReal','5500','YLabelReal','','MinYLimMag','0','MaxYLimMag',"
-      "'10','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor'"
-      ",[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686"
-      " 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686"
-      ";0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%"
-      "<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'To degrees1"
-      "'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','0','MaxYLimReal','5500','"
-      "YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPha"
-      "se',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrde"
-      "r',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.3921568"
-      "62745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0"
-      "745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames'"
-      ",{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1)),extmgr.Configuration('Tools','Plot Navi"
-      "gation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2017b')),'Version',"
-      "'2017b','Location',[397 371.8 721 611],'VisibleAtModelOpen','on')"
+      "erializedDisplays',{struct('MinYLimReal','-0.45','MaxYLimReal','0.2','YLabelReal','','MinYLimMag','0','MaxYLimMa"
+      "g','10','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickCol"
+      "or',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215"
+      "686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215"
+      "686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title'"
+      ",'%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'Balandui"
+      "no Robot/3'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-0.45','MaxYLim"
+      "Real','0.2','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','off','XGrid',true,'YGrid',tru"
+      "e,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.68627450980392"
+      "2],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372"
+      "549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117"
+      "647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefined"
+      "ChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1)),extmgr.Configuration('Tool"
+      "s','Plot Navigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2017b'"
+      ")),'Version','2017b','Location',[1035 219 1359 458],'VisibleAtModelOpen','on')"
       NumInputPorts	      "1"
     }
     Block {
-      BlockType		      Scope
-      Name		      "Scope2"
-      SID		      "610"
+      BlockType		      Display
+      Name		      "Theta Angle [deg]"
+      SID		      "413"
       Ports		      [1]
-      Position		      [745, 154, 775, 186]
-      ZOrder		      -16
-      ScopeSpecificationString "C++SS(StrPVP('Location','[188, 390, 512, 629]'),StrPVP('Open','off'),MxPVP('AxesTitles"
-      "',53,'struct(''axes1'',''%<SignalLabel>'')'),MxPVP('ScopeGraphics',56,'struct(''FigureColor'',''[0.5 0.5 0.5]'',"
-      "''AxesColor'',''[0 0 0]'',''AxesTickColor'',''[1 1 1]'',''LineColors'',''[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]''"
-      ",''LineStyles'',''-|-|-|-|-|-'',''LineWidths'',''[0.5 0.5 0.5 0.5 0.5 0.5]'',''MarkerStyles'',''none|none|none|n"
-      "one|none|none'')'),StrPVP('ShowLegends','off'),StrPVP('YMin','0.2'),StrPVP('YMax','2.2'),StrPVP('SaveName','Scop"
-      "eData2'),StrPVP('DataFormat','StructureWithTime'),StrPVP('LimitDataPoints','off'),StrPVP('BlockParamSampleTime',"
-      "'0'),StrPVP('Decimation','1'),StrPVP('BlockParamSampleInput','off'))"
-      NumInputPorts	      "1"
+      Position		      [1165, 295, 1255, 325]
+      ZOrder		      -1
+      BackgroundColor	      "magenta"
+      Decimation	      "1"
     }
     Block {
-      BlockType		      Scope
-      Name		      "Scope3"
-      SID		      "702"
-      Ports		      [1]
-      Position		      [745, 84, 775, 116]
-      ZOrder		      -16
-      ScopeSpecificationString "C++SS(StrPVP('Location','[188, 390, 512, 629]'),StrPVP('Open','off'),MxPVP('AxesTitles"
-      "',53,'struct(''axes1'',''%<SignalLabel>'')'),MxPVP('ScopeGraphics',56,'struct(''FigureColor'',''[0.5 0.5 0.5]'',"
-      "''AxesColor'',''[0 0 0]'',''AxesTickColor'',''[1 1 1]'',''LineColors'',''[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]''"
-      ",''LineStyles'',''-|-|-|-|-|-'',''LineWidths'',''[0.5 0.5 0.5 0.5 0.5 0.5]'',''MarkerStyles'',''none|none|none|n"
-      "one|none|none'')'),StrPVP('ShowLegends','off'),StrPVP('YMin','-1.2e+22'),StrPVP('YMax','0'),StrPVP('SaveName','S"
-      "copeData3'),StrPVP('DataFormat','StructureWithTime'),StrPVP('LimitDataPoints','off'),StrPVP('BlockParamSampleTim"
-      "e','0'),StrPVP('Decimation','1'),StrPVP('BlockParamSampleInput','off'))"
-      NumInputPorts	      "1"
+      BlockType		      Reference
+      Name		      "Theta Controller"
+      SID		      "409"
+      Ports		      [1, 1]
+      Position		      [625, 257, 665, 293]
+      ZOrder		      -6
+      BackgroundColor	      "yellow"
+      LibraryVersion	      "1.401"
+      SourceBlock	      "simulink/Continuous/PID Controller"
+      SourceType	      "PID 1dof"
+      SourceProductName	      "Simulink"
+      SourceProductBaseCode   "SL"
+      ContentPreviewEnabled   off
+      Controller	      "PID"
+      TimeDomain	      "Continuous-time"
+      SampleTime	      "-1"
+      IntegratorMethod	      "Forward Euler"
+      FilterMethod	      "Forward Euler"
+      Form		      "Parallel"
+      UseFilter		      on
+      ControllerParametersSource "internal"
+      P			      "Controllers.F_theta.Kp"
+      I			      "Controllers.F_theta.Ki"
+      D			      "Controllers.F_theta.Kd"
+      N			      "1/Controllers.F_theta.Tf"
+      InitialConditionSource  "internal"
+      InitialConditionForIntegrator "0"
+      InitialConditionForFilter	"0"
+      ExternalReset	      "none"
+      IgnoreLimit	      off
+      ZeroCross		      on
+      LimitOutput	      off
+      UpperSaturationLimit    "inf"
+      LowerSaturationLimit    "-inf"
+      LinearizeAsGain	      off
+      AntiWindupMode	      "none"
+      Kb		      "1"
+      TrackingMode	      off
+      Kt		      "1"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+      LockScale		      off
+      PParamMin		      "[]"
+      PParamMax		      "[]"
+      PParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      IParamMin		      "[]"
+      IParamMax		      "[]"
+      IParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      DParamMin		      "[]"
+      DParamMax		      "[]"
+      DParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      NParamMin		      "[]"
+      NParamMax		      "[]"
+      NParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      KbParamMin	      "[]"
+      KbParamMax	      "[]"
+      KbParamDataTypeStr      "Inherit: Inherit via internal rule"
+      KtParamMin	      "[]"
+      KtParamMax	      "[]"
+      KtParamDataTypeStr      "Inherit: Inherit via internal rule"
+      POutMin		      "[]"
+      POutMax		      "[]"
+      POutDataTypeStr	      "Inherit: Inherit via internal rule"
+      PGainOutDataTypeStr     "Inherit: Inherit via internal rule"
+      PProdOutDataTypeStr     "Inherit: Inherit via internal rule"
+      IOutMin		      "[]"
+      IOutMax		      "[]"
+      IOutDataTypeStr	      "Inherit: Inherit via internal rule"
+      IGainOutDataTypeStr     "Inherit: Inherit via internal rule"
+      IProdOutDataTypeStr     "Inherit: Inherit via internal rule"
+      DOutMin		      "[]"
+      DOutMax		      "[]"
+      DOutDataTypeStr	      "Inherit: Inherit via internal rule"
+      DGainOutDataTypeStr     "Inherit: Inherit via internal rule"
+      DProdOutDataTypeStr     "Inherit: Inherit via internal rule"
+      NOutMin		      "[]"
+      NOutMax		      "[]"
+      NOutDataTypeStr	      "Inherit: Inherit via internal rule"
+      NGainOutDataTypeStr     "Inherit: Inherit via internal rule"
+      NProdOutDataTypeStr     "Inherit: Inherit via internal rule"
+      KbOutMin		      "[]"
+      KbOutMax		      "[]"
+      KbOutDataTypeStr	      "Inherit: Inherit via internal rule"
+      KtOutMin		      "[]"
+      KtOutMax		      "[]"
+      KtOutDataTypeStr	      "Inherit: Inherit via internal rule"
+      IntegratorOutMin	      "[]"
+      IntegratorOutMax	      "[]"
+      IntegratorOutDataTypeStr "Inherit: Inherit via internal rule"
+      FilterOutMin	      "[]"
+      FilterOutMax	      "[]"
+      FilterOutDataTypeStr    "Inherit: Inherit via internal rule"
+      SumOutMin		      "[]"
+      SumOutMax		      "[]"
+      SumOutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SumI1OutMin	      "[]"
+      SumI1OutMax	      "[]"
+      SumI1OutDataTypeStr     "Inherit: Inherit via internal rule"
+      SumI2OutMin	      "[]"
+      SumI2OutMax	      "[]"
+      SumI2OutDataTypeStr     "Inherit: Inherit via internal rule"
+      SumI3OutMin	      "[]"
+      SumI3OutMax	      "[]"
+      SumI3OutDataTypeStr     "Inherit: Inherit via internal rule"
+      SumDOutMin	      "[]"
+      SumDOutMax	      "[]"
+      SumDOutDataTypeStr      "Inherit: Inherit via internal rule"
+      SumAccumDataTypeStr     "Inherit: Inherit via internal rule"
+      SumI1AccumDataTypeStr   "Inherit: Inherit via internal rule"
+      SumI2AccumDataTypeStr   "Inherit: Inherit via internal rule"
+      SumI3AccumDataTypeStr   "Inherit: Inherit via internal rule"
+      SumDAccumDataTypeStr    "Inherit: Inherit via internal rule"
+      SaturationOutMin	      "[]"
+      SaturationOutMax	      "[]"
+      SaturationOutDataTypeStr "Inherit: Same as input"
+      IntegratorContinuousStateAttributes "''"
+      IntegratorStateMustResolveToSignalObject off
+      IntegratorRTWStateStorageClass "Auto"
+      FilterContinuousStateAttributes "''"
+      FilterStateMustResolveToSignalObject off
+      FilterRTWStateStorageClass "Auto"
+      DifferentiatorICPrevScaledInput "0"
+      DifferentiatorOutMin    "[]"
+      DifferentiatorOutMax    "[]"
+      DifferentiatorOutDataTypeStr "Inherit: Inherit via internal rule"
+      InitialConditionSetting "State (most efficient)"
+      FilterDiffNumProductOutputDataTypeStr "Inherit: Inherit via internal rule"
+      FilterDiffDenProductOutputDataTypeStr "Inherit: Inherit via internal rule"
+      FilterDiffNumAccumDataTypeStr "Inherit: Inherit via internal rule"
+      FilterDiffDenAccumDataTypeStr "Inherit: Inherit via internal rule"
+      FilterDiffOutCoefMin    "[]"
+      FilterDiffOutCoefMax    "[]"
+      FilterDiffOutCoefDataTypeStr "Inherit: Inherit via internal rule"
+      SumDenAccumDataTypeStr  "Inherit: Inherit via internal rule"
+      SumDenOutMin	      "[]"
+      SumDenOutMax	      "[]"
+      SumDenOutDataTypeStr    "Inherit: Inherit via internal rule"
+      SumNumAccumDataTypeStr  "Inherit: Inherit via internal rule"
+      SumNumOutMin	      "[]"
+      SumNumOutMax	      "[]"
+      SumNumOutDataTypeStr    "Inherit: Inherit via internal rule"
+      ReciprocalOutMin	      "[]"
+      ReciprocalOutMax	      "[]"
+      ReciprocalOutDataTypeStr "Inherit: Inherit via internal rule"
+      DivideOutMin	      "[]"
+      DivideOutMax	      "[]"
+      DivideOutDataTypeStr    "Inherit: Inherit via internal rule"
+      TunerSelectOption	      "Transfer Function Based (PID Tuner App)"
     }
     Block {
       BlockType		      Step
-      Name		      "Step"
-      SID		      "608"
-      Position		      [410, 200, 440, 230]
-      ZOrder		      -22
-      After		      "2"
+      Name		      "Theta reference (deg)"
+      SID		      "687"
+      Position		      [230, 177, 270, 213]
+      ZOrder		      4
+      BackgroundColor	      "blue"
+      Time		      "2"
+      Before		      "1"
+      After		      "0"
       SampleTime	      "0"
-    }
-    Block {
-      BlockType		      TransferFcn
-      Name		      "The computed transfer function G"
-      SID		      "598"
-      Position		      [570, 360, 650, 410]
-      ZOrder		      -9
-      BackgroundColor	      "green"
-      Numerator		      "G.num{1}"
-      Denominator	      "G.den{1}"
     }
     Block {
       BlockType		      Gain
       Name		      "To degrees"
       SID		      "495"
-      Position		      [730, 200, 785, 240]
+      Position		      [1070, 290, 1125, 330]
       ZOrder		      -11
       Gain		      "(180/pi)"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -3006,131 +3264,449 @@ Model {
     Block {
       BlockType		      Gain
       Name		      "To degrees1"
-      SID		      "601"
-      Position		      [715, 365, 770, 405]
+      SID		      "462"
+      Position		      [430, 62, 450, 88]
       ZOrder		      -11
+      BlockMirror	      on
       Gain		      "(180/pi)"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
     }
+    Block {
+      BlockType		      Gain
+      Name		      "To radians"
+      SID		      "509"
+      Position		      [325, 174, 380, 216]
+      ZOrder		      -11
+      Gain		      "(pi/180)"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "To radians1"
+      SID		      "512"
+      Position		      [905, 327, 925, 353]
+      ZOrder		      -11
+      BlockMirror	      on
+      Gain		      "(pi/180)"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Velocioty - x_dot [m/s]"
+      SID		      "414"
+      Ports		      [1]
+      Position		      [1165, 240, 1255, 270]
+      ZOrder		      -1
+      BackgroundColor	      "magenta"
+      Decimation	      "1"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Velocity"
+      SID		      "684"
+      Ports		      [1]
+      Position		      [1095, 164, 1125, 196]
+      ZOrder		      -3
+      ScopeSpecificationString "C++SS(StrPVP('Location','[1078, 498, 1402, 737]'),StrPVP('Open','off'),MxPVP('AxesTitl"
+      "es',53,'struct(''axes1'',''%<SignalLabel>'')'),MxPVP('ScopeGraphics',56,'struct(''FigureColor'',''[0.50196078431"
+      "3725 0.501960784313725 0.501960784313725]'',''AxesColor'',''[0 0 0]'',''AxesTickColor'',''[1 1 1]'',''LineColors"
+      "'',''[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]'',''LineStyles'',''-|-|-|-|-|-'',''LineWidths'',''[0.5 0.5 0.5 0.5 0."
+      "5 0.5]'',''MarkerStyles'',''none|none|none|none|none|none'')'),StrPVP('ShowLegends','off'),StrPVP('YMin','-0.45'"
+      "),StrPVP('YMax','0.2'),StrPVP('SaveName','ScopeData1'),StrPVP('DataFormat','StructureWithTime'),StrPVP('LimitDat"
+      "aPoints','off'),StrPVP('BlockParamSampleTime','0'),StrPVP('Decimation','1'),StrPVP('BlockParamSampleInput','off'"
+      "))"
+      NumInputPorts	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Velocity Controller"
+      SID		      "411"
+      Ports		      [1, 1]
+      Position		      [280, 262, 320, 298]
+      ZOrder		      -6
+      BackgroundColor	      "yellow"
+      LibraryVersion	      "1.401"
+      SourceBlock	      "simulink/Continuous/PID Controller"
+      SourceType	      "PID 1dof"
+      SourceProductName	      "Simulink"
+      SourceProductBaseCode   "SL"
+      ContentPreviewEnabled   off
+      Controller	      "PI"
+      TimeDomain	      "Continuous-time"
+      SampleTime	      "-1"
+      IntegratorMethod	      "Forward Euler"
+      FilterMethod	      "Forward Euler"
+      Form		      "Parallel"
+      UseFilter		      on
+      ControllerParametersSource "internal"
+      P			      "Controllers.F_v.Kp"
+      I			      "Controllers.F_v.Ki"
+      D			      "0"
+      N			      "1"
+      InitialConditionSource  "internal"
+      InitialConditionForIntegrator "0"
+      InitialConditionForFilter	"0"
+      ExternalReset	      "none"
+      IgnoreLimit	      off
+      ZeroCross		      on
+      LimitOutput	      off
+      UpperSaturationLimit    "inf"
+      LowerSaturationLimit    "-inf"
+      LinearizeAsGain	      off
+      AntiWindupMode	      "none"
+      Kb		      "1"
+      TrackingMode	      off
+      Kt		      "1"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+      LockScale		      off
+      PParamMin		      "[]"
+      PParamMax		      "[]"
+      PParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      IParamMin		      "[]"
+      IParamMax		      "[]"
+      IParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      DParamMin		      "[]"
+      DParamMax		      "[]"
+      DParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      NParamMin		      "[]"
+      NParamMax		      "[]"
+      NParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      KbParamMin	      "[]"
+      KbParamMax	      "[]"
+      KbParamDataTypeStr      "Inherit: Inherit via internal rule"
+      KtParamMin	      "[]"
+      KtParamMax	      "[]"
+      KtParamDataTypeStr      "Inherit: Inherit via internal rule"
+      POutMin		      "[]"
+      POutMax		      "[]"
+      POutDataTypeStr	      "Inherit: Inherit via internal rule"
+      PGainOutDataTypeStr     "Inherit: Inherit via internal rule"
+      PProdOutDataTypeStr     "Inherit: Inherit via internal rule"
+      IOutMin		      "[]"
+      IOutMax		      "[]"
+      IOutDataTypeStr	      "Inherit: Inherit via internal rule"
+      IGainOutDataTypeStr     "Inherit: Inherit via internal rule"
+      IProdOutDataTypeStr     "Inherit: Inherit via internal rule"
+      DOutMin		      "[]"
+      DOutMax		      "[]"
+      DOutDataTypeStr	      "Inherit: Inherit via internal rule"
+      DGainOutDataTypeStr     "Inherit: Inherit via internal rule"
+      DProdOutDataTypeStr     "Inherit: Inherit via internal rule"
+      NOutMin		      "[]"
+      NOutMax		      "[]"
+      NOutDataTypeStr	      "Inherit: Inherit via internal rule"
+      NGainOutDataTypeStr     "Inherit: Inherit via internal rule"
+      NProdOutDataTypeStr     "Inherit: Inherit via internal rule"
+      KbOutMin		      "[]"
+      KbOutMax		      "[]"
+      KbOutDataTypeStr	      "Inherit: Inherit via internal rule"
+      KtOutMin		      "[]"
+      KtOutMax		      "[]"
+      KtOutDataTypeStr	      "Inherit: Inherit via internal rule"
+      IntegratorOutMin	      "[]"
+      IntegratorOutMax	      "[]"
+      IntegratorOutDataTypeStr "Inherit: Inherit via internal rule"
+      FilterOutMin	      "[]"
+      FilterOutMax	      "[]"
+      FilterOutDataTypeStr    "Inherit: Inherit via internal rule"
+      SumOutMin		      "[]"
+      SumOutMax		      "[]"
+      SumOutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SumI1OutMin	      "[]"
+      SumI1OutMax	      "[]"
+      SumI1OutDataTypeStr     "Inherit: Inherit via internal rule"
+      SumI2OutMin	      "[]"
+      SumI2OutMax	      "[]"
+      SumI2OutDataTypeStr     "Inherit: Inherit via internal rule"
+      SumI3OutMin	      "[]"
+      SumI3OutMax	      "[]"
+      SumI3OutDataTypeStr     "Inherit: Inherit via internal rule"
+      SumDOutMin	      "[]"
+      SumDOutMax	      "[]"
+      SumDOutDataTypeStr      "Inherit: Inherit via internal rule"
+      SumAccumDataTypeStr     "Inherit: Inherit via internal rule"
+      SumI1AccumDataTypeStr   "Inherit: Inherit via internal rule"
+      SumI2AccumDataTypeStr   "Inherit: Inherit via internal rule"
+      SumI3AccumDataTypeStr   "Inherit: Inherit via internal rule"
+      SumDAccumDataTypeStr    "Inherit: Inherit via internal rule"
+      SaturationOutMin	      "[]"
+      SaturationOutMax	      "[]"
+      SaturationOutDataTypeStr "Inherit: Same as input"
+      IntegratorContinuousStateAttributes "''"
+      IntegratorStateMustResolveToSignalObject off
+      IntegratorRTWStateStorageClass "Auto"
+      FilterContinuousStateAttributes "''"
+      FilterStateMustResolveToSignalObject off
+      FilterRTWStateStorageClass "Auto"
+      DifferentiatorICPrevScaledInput "0"
+      DifferentiatorOutMin    "[]"
+      DifferentiatorOutMax    "[]"
+      DifferentiatorOutDataTypeStr "Inherit: Inherit via internal rule"
+      InitialConditionSetting "State (most efficient)"
+      FilterDiffNumProductOutputDataTypeStr "Inherit: Inherit via internal rule"
+      FilterDiffDenProductOutputDataTypeStr "Inherit: Inherit via internal rule"
+      FilterDiffNumAccumDataTypeStr "Inherit: Inherit via internal rule"
+      FilterDiffDenAccumDataTypeStr "Inherit: Inherit via internal rule"
+      FilterDiffOutCoefMin    "[]"
+      FilterDiffOutCoefMax    "[]"
+      FilterDiffOutCoefDataTypeStr "Inherit: Inherit via internal rule"
+      SumDenAccumDataTypeStr  "Inherit: Inherit via internal rule"
+      SumDenOutMin	      "[]"
+      SumDenOutMax	      "[]"
+      SumDenOutDataTypeStr    "Inherit: Inherit via internal rule"
+      SumNumAccumDataTypeStr  "Inherit: Inherit via internal rule"
+      SumNumOutMin	      "[]"
+      SumNumOutMax	      "[]"
+      SumNumOutDataTypeStr    "Inherit: Inherit via internal rule"
+      ReciprocalOutMin	      "[]"
+      ReciprocalOutMax	      "[]"
+      ReciprocalOutDataTypeStr "Inherit: Inherit via internal rule"
+      DivideOutMin	      "[]"
+      DivideOutMax	      "[]"
+      DivideOutDataTypeStr    "Inherit: Inherit via internal rule"
+      TunerSelectOption	      "Transfer Function Based (PID Tuner App)"
+    }
+    Block {
+      BlockType		      Step
+      Name		      "Velocity reference (m/s)"
+      SID		      "689"
+      Position		      [120, 262, 160, 298]
+      ZOrder		      6
+      BackgroundColor	      "gray"
+      Time		      "2"
+      Before		      "0.1"
+      After		      "0"
+      SampleTime	      "0"
+    }
     Line {
       ZOrder		      1
-      SrcBlock		      "Linear model\n4th order system"
+      SrcBlock		      "Sum2"
       SrcPort		      1
-      Points		      [40, 0; 0, 80]
-      DstBlock		      "Manual Switch"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      2
-      SrcBlock		      "Non-linear model"
-      SrcPort		      1
-      DstBlock		      "Manual Switch"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      3
-      SrcBlock		      "Balanduino Robot"
-      SrcPort		      3
-      DstBlock		      "To degrees"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      4
-      SrcBlock		      "Manual Switch"
-      SrcPort		      1
-      DstBlock		      "Balanduino Robot"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      5
-      SrcBlock		      "Step"
-      SrcPort		      1
-      Points		      [50, 0]
+      Points		      [30, 0]
       Branch {
-	ZOrder			6
-	Points			[0, 170]
-	DstBlock		"The computed transfer function G"
+	ZOrder			2
+	DstBlock		"Theta Controller"
 	DstPort			1
       }
       Branch {
-	ZOrder			7
+	ZOrder			3
+	Points			[0, -65; -90, 0; 0, -135]
+	DstBlock		"To degrees1"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      4
+      SrcBlock		      "Theta Controller"
+      SrcPort		      1
+      Points		      [30, 0]
+      Branch {
+	ZOrder			33
+	Points			[0, 135]
+	DstBlock		"Control signal"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			32
 	DstBlock		"Balanduino Robot"
 	DstPort			2
       }
     }
     Line {
-      ZOrder		      8
-      SrcBlock		      "The computed transfer function G"
+      ZOrder		      5
+      SrcBlock		      "Linear model\n4th order system\nwith motor inductance\nand back-EMF"
       SrcPort		      1
-      DstBlock		      "To degrees1"
+      Points		      [80, 0; 0, 20]
+      DstBlock		      "Manual Switch"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      6
+      SrcBlock		      "Full non-linear model"
+      SrcPort		      1
+      Points		      [73, 0; 0, -55]
+      DstBlock		      "Manual Switch"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      7
+      SrcBlock		      "Manual Switch"
+      SrcPort		      1
+      Points		      [23, 0; 0, 90; -73, 0; 0, 80]
+      DstBlock		      "Balanduino Robot"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      8
+      SrcBlock		      "Sum1"
+      SrcPort		      1
+      DstBlock		      "Velocity Controller"
       DstPort		      1
     }
     Line {
       ZOrder		      9
-      SrcBlock		      "To degrees1"
+      SrcBlock		      "Switch between\ntheta and cascade control"
       SrcPort		      1
-      DstBlock		      "Scope1"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      10
-      SrcBlock		      "To degrees"
-      SrcPort		      1
-      DstBlock		      "Scope"
+      Points		      [0, 5]
+      DstBlock		      "Sum2"
       DstPort		      1
     }
     Line {
       ZOrder		      11
       SrcBlock		      "Balanduino Robot"
       SrcPort		      2
-      Points		      [40, 0; 0, -25]
-      DstBlock		      "Scope2"
+      Points		      [206, 0]
+      Branch {
+	ZOrder			12
+	Points			[0, 220; -801, 0]
+	DstBlock		"Sum1"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			13
+	Points			[39, 0]
+	Branch {
+	  ZOrder		  14
+	  DstBlock		  "Velocioty - x_dot [m/s]"
+	  DstPort		  1
+	}
+	Branch {
+	  ZOrder		  15
+	  Points		  [0, -75]
+	  DstBlock		  "Velocity"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      ZOrder		      16
+      SrcBlock		      "Velocity Controller"
+      SrcPort		      1
+      DstBlock		      "Switch between\ntheta and cascade control"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      17
+      SrcBlock		      "Sum3"
+      SrcPort		      1
+      Points		      [0, 10; -335, 0]
+      DstBlock		      "Sum2"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      18
+      SrcBlock		      "Balanduino Robot"
+      SrcPort		      3
+      Points		      [12, 0]
+      Branch {
+	ZOrder			31
+	Points			[0, -130]
+	DstBlock		"Theta"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			30
+	Points			[23, 0; 0, 30]
+	Branch {
+	  ZOrder		  19
+	  DstBlock		  "Sum3"
+	  DstPort		  1
+	}
+	Branch {
+	  ZOrder		  20
+	  DstBlock		  "To degrees"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      ZOrder		      21
+      SrcBlock		      "To degrees"
+      SrcPort		      1
+      DstBlock		      "Theta Angle [deg]"
       DstPort		      1
     }
     Line {
-      ZOrder		      12
+      ZOrder		      22
+      SrcBlock		      "To degrees1"
+      SrcPort		      1
+      DstBlock		      "Ref angle corr [deg]"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      24
+      SrcBlock		      "To radians"
+      SrcPort		      1
+      Points		      [5, 0; 0, 65]
+      DstBlock		      "Switch between\ntheta and cascade control"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      25
+      SrcBlock		      "To radians1"
+      SrcPort		      1
+      DstBlock		      "Sum3"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      26
       SrcBlock		      "Balanduino Robot"
       SrcPort		      1
-      Points		      [20, 0; 0, -70]
-      DstBlock		      "Scope3"
+      Points		      [205, 0]
+      Branch {
+	ZOrder			27
+	Points			[115, 0]
+	DstBlock		"Position - x [m]"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			28
+	Points			[0, -125]
+	DstBlock		"Position"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      63
+      SrcBlock		      "Measurement noise"
+      SrcPort		      1
+      DstBlock		      "To radians1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      34
+      SrcBlock		      "Theta reference (deg)"
+      SrcPort		      1
+      DstBlock		      "To radians"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      62
+      SrcBlock		      "Velocity reference (m/s)"
+      SrcPort		      1
+      DstBlock		      "Sum1"
       DstPort		      1
     }
     Annotation {
       SID		      "406"
-      Name		      "Angle"
-      Position		      [668, 205, 695, 219]
+      Name		      "Theta"
+      Position		      [868, 280, 895, 294]
       InternalMargins	      [0, 0, 0, 0]
       ZOrder		      -1
     }
     Annotation {
-      SID		      "600"
-      Name		      "Theta"
-      Position		      [658, 363, 685, 377]
+      SID		      "428"
+      Name		      "Velocity \nx_dot"
+      Position		      [954, 256, 993, 282]
       InternalMargins	      [0, 0, 0, 0]
       ZOrder		      -2
-    }
-    Annotation {
-      SID		      "611"
-      Name		      "Velocity"
-      Position		      [685, 153, 721, 167]
-      InternalMargins	      [0, 0, 0, 0]
-      ZOrder		      -3
-    }
-    Annotation {
-      SID		      "612"
-      Name		      "Switch between\n models "
-      Position		      [321, 129, 392, 155]
-      InternalMargins	      [0, 0, 0, 0]
-      ZOrder		      -4
-    }
-    Annotation {
-      SID		      "703"
-      Name		      "Position"
-      Position		      [667, 83, 704, 97]
-      InternalMargins	      [0, 0, 0, 0]
-      ZOrder		      -5
     }
   }
 }
@@ -3142,7 +3718,7 @@ Model {
 Stateflow {
   machine {
     id			    1
-    name		    "Sim_Balanduino_Model"
+    name		    "Sim_Balanduino_Cascade"
     created		    "06-Oct-2014 09:38:16"
     isLibrary		    0
     sfVersion		    80000012
