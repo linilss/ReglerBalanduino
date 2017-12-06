@@ -15,6 +15,8 @@ Gv = (d*s^2 - g) / s;
 Gpp = F *a /(a*F+s^2-b);
 Gp = -Gpp *Gv
 
+[mag, phase, wout] = bode(Gp,0.75);
+
 bode(Gp);
 
 %%

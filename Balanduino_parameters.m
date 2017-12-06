@@ -30,7 +30,7 @@ Controllers.F_theta.Kd = 1.68;
 Controllers.F_theta.Tf = 1/25;
 
 % Yttre regulatorn 1: F_v
-Controllers.F_v.Kp = -0.0;
-Controllers.F_v.Ki = -0.0;
+Controllers.F_v.Kp = -0.0642;
+Controllers.F_v.Ki = -0.033;
 
 
