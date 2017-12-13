@@ -13,9 +13,12 @@ s = tf('s');
 F = Kp + Ki/s + Kd*s/(1+Tf*s);
 Gv = (d*s^2 - g) / s;
 Gpp = F *a /(a*F+s^2-b);
-Gp = -Gpp *Gv
+Gp = -Gpp *Gv *1/s
 
-[mag, phase, wout] = bode(Gp,0.75);
+[mag, phase, wout] = bode(Gp,0.4)
+
+frsp = evalfr(Gp,0.4j);
+abs(frsp);
 
 bode(Gp);
 

@@ -21,14 +21,20 @@ double D_inner = 0.0;
 double e_inner_old = 0.0;
 
 // Define the parameters for the outer PI-controller (continuous)
-double Kp_outer = 0.064 2;
+double Kp_outer = -0.0642;
 double Ki_outer = -0.033;
 double Kd_outer = 0.0;
 double Tf_outer = 0.0;
+//Pd
+double Kd_outerV2 = -0.0345;
+double Kp_outerV2 = -0.0069;
+double Tf_outerV2 = 1.0355;
 
 double P_outer = 0.0;
 double I_outer = 0.0;
 double D_outer = 0.0;
+double P_outerV2 = 0.0;
+double D_outerV2 = 0.0;
 
 double e_outer_old = 0.0;
 
@@ -58,9 +64,9 @@ void loop()
   //    calculate the time since last sample time.
   //  
   unsigned long timer_us = micros(); // Time of current sample in microseconds  
-  h = (double)(timer_us - pidTimer_us) / 1000000.0; // Time since last sample in seconds
+  h = (double)(timer_us - pidTimer_us) / 1000000.0; // Time since last sample in seconds //Sampelintervall
   pidTimer_us = timer_us;  // Save the time of this sampleTime of last sample
-
+  
   
   // Part 3: Read the angular orientation (rad) of the robot
   double theta = getTheta();
@@ -84,32 +90,32 @@ void loop()
     // Outer PI-controller:
     // 
     // Part 5: Generate setpoint value (In Swedish: Börvärde)
-    //
-    //reference = setpoint_generator_pulse();
-    double v_r = 0;
+    reference = setpoint_generator_pulse();
+    //double v_r = 0;
 
-    // 
     // Part 6: Generate the control error for the outer loop, i.e. difference
     //    between the reference_value and the actual_output.
     //
-    double e_outer = v_r - v; // Control error
-    //double e_outer = reference - balanduino_pos; // Control error
-  
+    //double e_outer = v_r - v; // Control error
+    double e_outer = reference - balanduino_pos; // Control error
+    
     //
     // Part 7: Calculate control output (In Swedish: Styrsignal)
     //
     // Implement your PI-controller here:
     //
-    // Pseudo-kod for a PID-controller
-    // P = c0 * e
-    // D = c1 * D + c2 * (e - eold)
-    // u = P + I + D // Bestäm totala styrsignalen
-    // daout("u", u) // Skriv styrsignalen till DA-omv.
-    // I = I + c3 * e // Uppdatera integraldelen
-    // eold = e
+    // P_outer = Kp_outer * e_outer;
+    // I_outer = I_outer + Ki_outer*h * e_outer; // Uppdatera integraldelen
+    // double u_outer = P_outer + I_outer; // Bestäm totala styrsignalen
     
-    P_outer = Kp_outer * e_outer;
-    double u_outer = P_outer; // Calculate control output  
+    // Implement your PD-controller here: 
+      P_outerV2 = Kp_outerV2 * e_outer;
+      D_outerV2 = Tf_outerV2/(Tf_outerV2+h) * D_outerV2 + Kd_outerV2/(Tf_outerV2+h) * (e_outer - e_outer_old);
+      double u_outer = P_outerV2 + D_outerV2;
+      
+     
+    
+    //double u_outer = P_outer; // Calculate control output  Gammal?
     
     // Inner PID-controller:
     // 
@@ -122,22 +128,25 @@ void loop()
     //    between the reference_value and the actual_output.
     //
     double e_inner = theta_r - theta; // Control error
+    double e_old   = 0; // La till detta själv.
 
     //
     // Part 10: Calculate control output (In Swedish: Styrsignal)
     //
     // Implement your PID-controller here:
     //
-    // Pseudo-kod for a PID-controller
-    // P = c0 * e
-    // D = c1 * D + c2 * (e - eold)
-    // u = P + I + D // Bestäm totala styrsignalen
-    // daout("u", u) // Skriv styrsignalen till DA-omv.
-    // I = I + c3 * e // Uppdatera integraldelen
-    // eold = e
+       P_inner = Kp_inner * e_inner;
+       D_inner = Tf_inner/(Tf_inner+h) * D_inner + Kd_inner/(Tf_inner+h) * (e_inner - e_inner_old);
+       I_inner = I_inner + Ki_inner*h * e_inner; // Uppdatera integraldelen
+       double u_inner = P_inner + I_inner + D_inner; // Bestäm totala styrsignalen
+      // daout("u", u) // Skriv styrsignalen till DA-omv.
+       
+  
     
-    P_inner = Kp_inner * e_inner;
-    double u = P_inner; // Calculate control output  
+    //Gamla ?
+    //P_inner = Kp_inner * e_inner;
+    //double u = P_inner; // Calculate control output  
+    double u = u_inner;
     double saturated_u = constrain(u, -12.0, 12.0); // Make sure the calculated output is -12 <= u <= 12 (Min voltage -12V, max voltage +12V)
 
     e_inner_old = e_inner;
